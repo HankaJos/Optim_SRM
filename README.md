@@ -29,14 +29,26 @@ pip install -r requirements.txt
 
 ## 🚦 Usage
 
-### 🔧 Run the optimizer via command line:
+###  Run the optimizer via command line:
 ```bash
 (.venv) python gen.py [OPTIONS]
 ```
 
-### ⚙️ Available CLI Arguments:
+###  Available CLI Arguments:
 
-### 🧬 Example Run
+| Argument              | Description                                                             | Default             |
+|-----------------------|-------------------------------------------------------------------------|---------------------|
+| `--script-path`       | Path to the simulation script to run                                    | `openMotor/main.py` |
+| `--input-file`        | Input motor data file (`.json` or `.ric`)                               | `data.json`         |
+| `--limits`            | Limit type: `'Default'`, `'RIClike'`, or a custom JSON path             | `'Default'`         |
+| `--n-populations`     | Number of individuals per generation                                    | `10`                |
+| `--evo-threshold`     | Stop if score improves less than this threshold                         | `0`                 |
+| `--max-same-results`  | Stop if best score doesn't improve for this many generations            | `5`                 |
+| `--seed`              | Random seed (generated if not provided)                                 | `None`              |
+| `--naive-tol`         | Tolerance when interpreting `.ric` inputs into parameter limits         | `12`                |
+
+
+###  Example Run
 Run the script with a .ric input file and custom settings:
 ```bash
 (.venv) python gen.py\
@@ -74,12 +86,26 @@ Each execution creates a timestamped folder like:
 ## 📚 Project Structure
 ```php-template
 .
-├── run.py/                    # Main CLI runner
-│   ├── Simulation             # Handles simulations in openMotor and data evaluation
-│   └── Population             # Performs selection, mutation and breeing
+├── gen.py/                    # Main CLI runner
+│   ├── Simulation             # Handles running the simulation script, collecting output and output evaluation
+│   └── Population             # Performs initialization, selection, mutation and breeing of population
 ├── data.py/
 │   ├── DataGenerator          # Handles .ric → JSON conversions
 │   └── RICFileHandler         # Reads/writes .ric files
 ├── README.md
-└── requirements.txt           # (Optional, if using external packages)
+├── openMotor                  # simulation interface
+└── data.json                  # example input data
 ```
+
+## 📈 Scoring System
+Each individual's "fitness" (score) is calculated based on how close it is to given parameter limits:
+- Inside bounds = no penalty
+
+- Outside bounds = scaled penalty based on a factor
+
+- The total score = sum of all parameter scores
+
+- The algorithm tries to minimize this total score over generations.
+
+## 👤 Author
+Developed by Hana Josifkova.
