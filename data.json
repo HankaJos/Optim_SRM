@@ -1,0 +1,256 @@
+{
+    "info": {
+        "id": 2,
+        "total_score": null,
+        "limits": {
+            "input": {
+                "grains": {
+                    "properties": {
+                        "diameter": {
+                            "factor": 5,
+                            "max": 0.0363,
+                            "min": 0.0297
+                        },
+                        "coreDiameter": {
+                            "factor": 5,
+                            "max": 0.0121,
+                            "min": 0.0099
+                        },
+                        "length": {
+                            "factor": 5,
+                            "max": 0.2541,
+                            "min": 0.2079
+                        }
+                    }
+                },
+                "nozzle": {
+                    "exit": {
+                        "factor": 1,
+                        "max": 0.03267,
+                        "min": 0.02673
+                    },
+                    "convAngle": {
+                        "factor": 1,
+                        "max": 42.9,
+                        "min": 35.1
+                    },
+                    "divAngle": {
+                        "factor": 1,
+                        "max": 16.5,
+                        "min": 13.5
+                    },
+                    "efficiency": {
+                        "factor": 0,
+                        "max": 1.0,
+                        "min": 0.9
+                    },
+                    "erosionCoeff": {
+                        "factor": 0,
+                        "max": 0.0,
+                        "min": 0.0
+                    },
+                    "slagCoeff": {
+                        "factor": 0,
+                        "max": 0.0,
+                        "min": 0.0
+                    },
+                    "throat": {
+                        "factor": 1,
+                        "max": 0.00545,
+                        "min": 0.00446
+                    },
+                    "throatLength": {
+                        "factor": 1,
+                        "max": 0.0121,
+                        "min": 0.0
+                    }
+                },
+                "propellant": {
+                    "density": {
+                        "factor": 0,
+                        "max": 1750,
+                        "min": 1750
+                    }
+                }
+            },
+            "output": {
+                "score": {
+                    "Burn_Time(s)": {
+                        "factor": 3,
+                        "max": 3.9,
+                        "min": 1.235
+                    },
+                    "Initial_Kn": {
+                        "factor": 1,
+                        "max": 420.0,
+                        "min": 380.0
+                    },
+                    "Peak_Kn": {
+                        "factor": 1,
+                        "max": 892.5,
+                        "min": 807.5
+                    },
+                    "Avg_Chamber_Pressure(Pa)": {
+                        "factor": 4,
+                        "max": 5250000.0,
+                        "min": 4750000.0
+                    },
+                    "Max_Chamber_Pressure(Pa)": {
+                        "factor": 4,
+                        "max": 10000000.0,
+                        "min": 9500000.0
+                    },
+                    "Impulse": {
+                        "factor": 4,
+                        "max": 525.0,
+                        "min": 475.0
+                    },
+                    "ISP": {
+                        "factor": 3,
+                        "max": 147.0,
+                        "min": 133.0
+                    },
+                    "Port/throat": {
+                        "factor": 2,
+                        "max": 3.15,
+                        "min": 2.85
+                    },
+                    "Peak_Mass_Flux": {
+                        "factor": 1,
+                        "max": 735.0,
+                        "min": 665.0
+                    },
+                    "Delivered_thrust_coefficient": {
+                        "factor": 1,
+                        "max": 1.785,
+                        "min": 1.615
+                    },
+                    "Ideal_thrust_coefficient": {
+                        "factor": 1,
+                        "max": 1.68,
+                        "min": 1.52
+                    },
+                    "Prop_mass": {
+                        "factor": 1,
+                        "max": 0.33,
+                        "min": 0.1045
+                    },
+                    "Prop_length": {
+                        "factor": 1,
+                        "max": 0.24255,
+                        "min": 0.21945
+                    },
+                    "Volume_loading": {
+                        "factor": 1,
+                        "max": 92.4,
+                        "min": 83.6
+                    }
+                }
+            }
+        }
+    },
+    "input": {
+        "config": {
+            "ambPressure": 101325.0,
+            "burnoutThrustThres": 0.1,
+            "burnoutWebThres": 2.54e-05,
+            "flowSeparationWarnPercent": 0.05,
+            "mapDim": 750,
+            "maxMassFlux": 1406.469761,
+            "maxPressure": 20342500.0,
+            "minPortThroat": 2.0,
+            "sepPressureRatio": 0.4,
+            "timestep": 0.001
+        },
+        "grains": [
+            {
+                "properties": {
+                    "coreDiameter": 0.02,
+                    "diameter": 0.035,
+                    "inhibitedEnds": "Neither",
+                    "length": 0.14
+                },
+                "type": "BATES"
+            }
+        ],
+        "nozzle": {
+            "convAngle": 35.0,
+            "divAngle": 15.0,
+            "efficiency": 1.0,
+            "erosionCoeff": 0.0,
+            "exit": 0.02,
+            "slagCoeff": 0.0,
+            "throat": 0.006,
+            "throatLength": 0.01
+        },
+        "propellant": {
+            "density": 1750.0,
+            "name": "Nakka - KNSB",
+            "tabs": [
+                {
+                    "a": 1.9253259619746373e-06,
+                    "k": 1.1361,
+                    "m": 39.9,
+                    "maxPressure": 806715.0,
+                    "minPressure": 103425.0,
+                    "n": 0.625,
+                    "t": 1520.0
+                },
+                {
+                    "a": 0.6656608561590813,
+                    "k": 1.1361,
+                    "m": 39.9,
+                    "maxPressure": 1503110.0,
+                    "minPressure": 806715.0,
+                    "n": -0.313,
+                    "t": 1520.0
+                },
+                {
+                    "a": 0.009528121181782798,
+                    "k": 1.1361,
+                    "m": 39.9,
+                    "maxPressure": 3792250.0,
+                    "minPressure": 1503110.0,
+                    "n": -0.0145,
+                    "t": 1520.0
+                },
+                {
+                    "a": 2.709667768835332e-06,
+                    "k": 1.1361,
+                    "m": 39.9,
+                    "maxPressure": 7032900.0,
+                    "minPressure": 3792250.0,
+                    "n": 0.5245,
+                    "t": 1520.0
+                },
+                {
+                    "a": 0.00417677261069904,
+                    "k": 1.1361,
+                    "m": 39.9,
+                    "maxPressure": 10673460.0,
+                    "minPressure": 7032900.0,
+                    "n": 0.059,
+                    "t": 1520.0
+                }
+            ]
+        }
+    },
+    "output": {
+        "score": {
+            "Burn_Time(s)": 0.7400000000000005,
+            "Initial_Kn": 356.9444444444445,
+            "Peak_Kn": 485.67013516366546,
+            "Avg_Chamber_Pressure(Pa)": 6679732.789086086,
+            "Max_Chamber_Pressure(Pa)": 8028048.524617913,
+            "Impulse": 212.0931309089667,
+            "ISP": 136.23729538643929,
+            "Port/throat": 11.11111111111111,
+            "Peak_Mass_Flux": 453.07312374572905,
+            "Delivered_thrust_coefficient": 1.5166941771433495,
+            "Ideal_thrust_coefficient": 1.6304966476862353,
+            "Prop_mass": 0.15874860377670927,
+            "Prop_length": 0.14,
+            "Volume_loading": 67.34693877551021
+        }
+    }
+}
