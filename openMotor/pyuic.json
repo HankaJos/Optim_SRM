@@ -1,0 +1,10 @@
+{
+    "files": [
+        [
+            "uilib/views/forms/*.ui",
+            "uilib/views"
+        ]
+    ],
+    "pyuic": "pyuic6",
+    "pyuic_options": ""
+}
