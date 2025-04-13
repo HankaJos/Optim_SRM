@@ -351,13 +351,13 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Genetic Algorithm Runner")
     parser.add_argument("--script-path", type=str, default=os.path.join("openMotor", "main.py"),
                         help="Path to the simulation script.")
-    parser.add_argument("--input-file", type=str, default="data1.json",
+    parser.add_argument("--input-file", type=str, default="data.json",
                         help="Path to the input JSON or RIC file.")
     parser.add_argument("--limits", type=str, default="Default",
                         help="Limits for evaluating motor (Default, RIClike or path).")
     parser.add_argument("--n-populations", type=int, default=10,
                         help="Number of individuals in the population.")
-    parser.add_argument("--evo-threshold", type=int, default=8,
+    parser.add_argument("--evo-threshold", type=int, default=0,
                         help="Evolution threshold for early stopping.")
     parser.add_argument("--max-same-results", type=int, default=5,
                         help="Max number of times same result can occur before stopping.")
