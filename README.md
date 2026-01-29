@@ -93,8 +93,9 @@ Each execution creates a timestamped folder like:
 │   ├── DataGenerator          # Handles .ric → JSON conversions
 │   └── RICFileHandler         # Reads/writes .ric files
 ├── README.md
-├── openMotor                  # simulation interface
-└── data.json                  # example input data
+├── openMotor                  # Simulation interface
+├── transform                  # Transform function that rescales and shifts the simulated curve
+└── data.json                  # Example input data
 ```
 
 ## 📈 Scoring System
